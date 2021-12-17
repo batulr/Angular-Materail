@@ -1,0 +1,182 @@
+<app-main-nav>
+  <form [formGroup]="profileForm" class="form-container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Profile Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div>
+            <mat-form-field class="full-width">
+              <input
+                formControlName="firstName"
+                matInput
+                placeholder="First name"
+              />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="full-width">
+              <input
+                formControlName="lastName"
+                matInput
+                placeholder="Last name"
+              />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="full-width">
+              <textarea
+                formControlName="address"
+                matInput
+                placeholder="Address"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div class="top-padding">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Select DOB</mat-label>
+              <input formControlName="dob" matInput [matDatepicker]="picker" />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-radio-group formControlName="gender" class="margin-left">
+              <mat-radio-button value="male" color="primary">
+                Male
+              </mat-radio-button>
+              <mat-radio-button value="female" color="primary">
+                Female
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="top-padding">
+            <br />
+            <span>Languages Known</span>
+            <br />
+            <li class="lang-list">
+              <mat-label>English</mat-label>
+              <mat-slide-toggle
+                formControlName="eng"
+                class="example-margin"
+                color="primary"
+                checked="false"
+                [disabled]="false"
+              >
+              </mat-slide-toggle>
+            </li>
+            <li class="lang-list">
+              <mat-label>Hindi</mat-label>
+              <mat-slide-toggle
+                formControlName="hin"
+                class="example-margin"
+                color="primary"
+                checked="false"
+                [disabled]="false"
+              >
+              </mat-slide-toggle>
+            </li>
+            <li class="lang-list">
+              <mat-label>French</mat-label>
+              <mat-slide-toggle
+                formControlName="fren"
+                class="example-margin"
+                color="primary"
+                checked="false"
+                [disabled]="false"
+              >
+              </mat-slide-toggle>
+            </li>
+            <li class="lang-list">
+              <mat-label>Deustch</mat-label>
+              <mat-slide-toggle
+                formControlName="germ"
+                class="example-margin"
+                color="primary"
+                checked="false"
+                [disabled]="false"
+              >
+              </mat-slide-toggle>
+            </li>
+          </div>
+          <div>
+            <br />
+            <mat-label>Hobbies</mat-label>
+            <span class="example-list-section">
+              <ul>
+                <li *ngFor="let subtask of task.subtasks" class="hobbies">
+                  <mat-checkbox
+                    [(ngModel)]="subtask.completed"
+                    [color]="subtask.color"
+                    (ngModelChange)="updateAllComplete()"
+                    formControlName="hobby"
+                  >
+                    {{ subtask.name }}
+                  </mat-checkbox>
+                </li>
+              </ul>
+            </span>
+            <!-- <mat-checkbox
+              formControlName="read"
+              class="example-margin"
+              [(ngModel)]="checked"
+              [(indeterminate)]="indeterminate"
+              [labelPosition]="labelPosition"
+              [disabled]="disabled"
+              color="primary"
+            >
+              Reading
+            </mat-checkbox>
+            <mat-checkbox
+              formControlName="songs"
+              class="example-margin"
+              [(ngModel)]="checked"
+              [(indeterminate)]="indeterminate"
+              [labelPosition]="labelPosition"
+              [disabled]="disabled"
+              color="primary"
+            >
+              Listening to Songs
+            </mat-checkbox>
+            <mat-checkbox
+              formControlName="aac"
+              class="example-margin"
+              [(ngModel)]="checked"
+              [(indeterminate)]="indeterminate"
+              [labelPosition]="labelPosition"
+              [disabled]="disabled"
+              color="primary"
+            >
+              Art and Crafts
+            </mat-checkbox>
+            <mat-checkbox
+              formControlName="cyc"
+              class="example-margin"
+              [(ngModel)]="checked"
+              [(indeterminate)]="indeterminate"
+              [labelPosition]="labelPosition"
+              [disabled]="disabled"
+              color="primary"
+            >
+              Cycling
+            </mat-checkbox> -->
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          (click)="saveForm()"
+          mat-raised-button
+          color="primary"
+          class="act-btn"
+        >
+          Save Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</app-main-nav>

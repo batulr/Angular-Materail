@@ -1,0 +1,38 @@
+.card {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.top-padding {
+  padding-top: 3px;
+}
+
+.margin-left mat-radio-button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.form-container {
+  margin-top: 10px;
+}
+
+.lang-list {
+  list-style-type: none;
+  margin: 8px;
+}
+
+.hobbies {
+  list-style-type: none;
+  margin: 5px;
+}
+
+.example-margin {
+  margin-left: 15px;
+}
+
+.act-btn {
+  margin: 0 auto;
+}
